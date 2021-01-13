@@ -88,19 +88,17 @@ updateUser(user: User):Observable<any>{
     return this._http.put(this.url+'update-user/'+user._id,params, {headers:headers});
 }
 
-getUsers(page = null): Observable<any> {
-    let headers = new HttpHeaders()
-      .set('Content-type', 'application/json')
-      .set('Authorization', this.getToken())
-      .set('If-Modified-Since', '0')
-      .set('Cache-Control', 'no-cache')
-      .set('Expires', 'Sat, 01 Jan 2000 00:00:00 GMT');
-    return this._http.get(this.url + 'users/' + page, {headers: headers});
-  }
-    getUser(id): Observable<any>{
-        let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());
+getUsers(page = null):Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+											.set('Authorization', this.getToken());
 
-        return this._http.get(this.url+'user/'+id, {headers:headers});
+		return this._http.get(this.url+'users/'+page, {headers:headers});
+	}
 
-    }
+	getUser(id):Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+											.set('Authorization', this.getToken());
+
+		return this._http.get(this.url+'user/'+id, {headers:headers});
+	}
 }
