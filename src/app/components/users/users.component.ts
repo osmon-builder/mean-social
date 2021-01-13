@@ -43,11 +43,12 @@ export class UsersComponent implements OnInit {
   actualPage(){
     this._route.params.subscribe(params => {
       let page = +params['page'];
-      this.page = page;
+      
 
       if(!page){
         page = 1;
       }else{  
+        this.page = page;
         this.next_page = page+1;
         this.prev_page = page-1;
 
