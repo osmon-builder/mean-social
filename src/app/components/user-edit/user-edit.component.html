@@ -1,0 +1,51 @@
+<div class="col-lg-5">
+    <h1 class="h1-strong">{{title}}</h1>
+    <div class="alert alert-success" *ngIf= "status == 'success'">
+        Se han actualizado tus datos correctamente
+    </div>
+
+    <div class="aler alert-danger" *ngIf= "status =='error'">
+        No se ha podido actualizar los datos
+    </div>
+
+    <form #userEditForm="ngForm" (ngSubmit)="onSubmint()" class="clo-lg-12">
+        <p>
+            <label>Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required class="form-control"/>
+            <span *ngIf="!name.value && name.touched">
+                El nombre es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Surname</label>
+            <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required class="form-control"/>
+            <span *ngIf="!surname.value && surname.touched">
+                El apellido es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Nick</label>
+            <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" required
+            class="form-control"/>
+            <span *ngIf="!nick.value && nick.touched">
+                El nick es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Email</label>
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email" required class="form-control"/>
+            <span *ngIf="!email.value && email.touched">
+                El email es obligatorio
+            </span>
+        </p>
+        <div *ngIf="user.image">
+            <img src="{{ url + 'get-image-user/'+ user.image }}"/>
+        </div>
+        <p>
+            <label>Sube tu avatar</label>
+            <input type="file" placeholder="Subir imagen " (change)="fileChangeEvent($event)"/>
+        </p>
+
+        <input type="submit" value="{{title}}" class="btn btn-warning" [disabled] ="!userEditForm.form.valid"/>
+    </form>
+</div>

@@ -1,0 +1,81 @@
+/*Generales*/
+
+.h1-strong {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.659);
+       
+}
+
+
+
+/*Barra*/
+.navigation {
+    padding: 0%;
+   
+   
+}
+
+.navigation .navbar{
+    border-radius: 0%;
+    background: skyblue;
+    border: none;
+}
+
+.navigation .navbar *{
+    color: white !important;
+}
+
+/*.col-lg-5 {
+    margin-left: 30%;
+    background: skyblue !important;
+}
+*/
+.btn-success {
+    margin-bottom: 20px;
+    margin-left: 40%;   
+}
+
+ .navigation .navbar a:hover{
+    background: lightcoral !important;
+
+ }
+.jumbotron{
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+             
+    }
+
+.navbar .avatar {
+    width:  35px;
+    height:  35px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 9px;
+    margin-right: 2px;
+}
+
+.navigation .avatar img {
+    height: auto;
+    width: 45px;
+}
+
+.navigation .navbar .dropdown-menu *{
+    color:lightcoral !important;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.navigation .dropdown {
+    background-color: rgb(76, 0, 255) !important;
+}
+
+.navigation .navbar .dropdown-menu a:hover{
+    background: gray !important;
+
+ }
